@@ -5,7 +5,7 @@ import '../Styles/Components/carta.scss';
 
 export const Carta = ({carta, setActiveCarta, setHexRect}) => {
 
-    const {nombre, imagen, reverso, cualidades, estadoVirtuoso, estadoDesvirtuoso} = carta;
+    const {/* nombre, imagen, reverso, */ cualidades, estadoVirtuoso, estadoDesvirtuoso} = carta;
 
     const hexRef = useRef();
 

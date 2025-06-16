@@ -14,9 +14,8 @@ import hestiaReverso from './Images/Carta_Hestia_reverso.png';
 import persefoneReverso from './Images/Carta_Perséfone_reverso.png';
 import Fondo from './Images/Fondo.jpg';
 
-
-export default {
-    afrodita,
+let imagenes = {
+     afrodita,
     artemisa,   
     atenea,
     demeter,    
@@ -32,3 +31,4 @@ export default {
     persefoneReverso,
     Fondo
 }
+export default imagenes;
