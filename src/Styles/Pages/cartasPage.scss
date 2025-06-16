@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Adelia';
+  src: url('../../Assets/Fonts/adelia.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Perpetua';
+  src: url('../../Assets/Fonts/perpetua.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.contenedor{
+    background-image: url('../../Assets/Images/Fondo.jpg');
+    background-size: cover;      /* Hace que la imagen cubra toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center;  /* Centra la imagen */   
+    padding: 0;
+    margin: 0;
+
+    .texto{
+        color: white;
+        height: auto;
+        width: 40%;
+       /*  background: red; */
+        margin-left: 60px;
+        margin-top: 30px;
+        .titulo{
+            font-family: 'Adelia', sans-serif;
+            font-size: 35px;
+            text-align: initial;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+            margin-top: 20px;
+        }
+        .contenido{
+            font-family: 'Perpetua', serif;
+            font-size: 30px;
+            text-align: initial;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+            margin-top: 15%;
+            width: 90%;
+        }
+    }
+
+    .cartas {
+      display: flex;
+      flex-direction: column;     
+      /* background: rebeccapurple; */
+      gap: 0;
+      height: auto;
+      width: 60%;
+      
+      
+      .panel{
+        margin-left: 10%;
+        width: 100%;
+        /* background: green; */
+        margin-left: 10%;
+        .fila{
+            /* background: greenyellow; */
+            width: 36%;
+            margin-left: -7%;
+           
+            .items{
+                 margin-top: auto;
+                 margin-bottom: auto;
+                .carta{
+                    /* background: white; */
+                    width: 100%;                
+                }
+                .carta:hover{
+                    transform: scale(1.05);
+                    transition: transform 0.3s ease;
+                    cursor: pointer;
+                }
+            }            
+        }
+      }
+
+    }
+    .carta.girando {
+     animation: girar-carta 0.7s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+     z-index: 10;
+    /* Variables para la animación */
+    --tx: 0px;
+    --ty: 0px;
+    }
+
+   @keyframes girar-carta {
+             0% {
+                    transform: translate(0, 0) scale(2) rotateY(0deg);
+                }
+                50% {
+                    transform: translate(var(--tx), var(--ty)) scale(2) rotateY(90deg);
+                }
+                100% {
+                    transform: translate(var(--tx), var(--ty)) scale(2) rotateY(180deg);
+                }
+    }
+}
+
+
+    
