@@ -1,3 +1,4 @@
+import documentos from "../../Assets/documentos";
 import imagenes from "../../Assets/imagenes";
 
 export const cartasData = () => {
@@ -7,6 +8,7 @@ export const cartasData = () => {
             nombre: 'Afrodita',
             imagen: imagenes.afrodita,
             reverso: imagenes.afroditaReverso,
+            documento: documentos.afrodita,
             cualidades: [
                 'Sensualidad',
                 'Creatividad',
@@ -30,6 +32,7 @@ export const cartasData = () => {
             nombre: 'Artemisa',
             imagen: imagenes.artemisa,
             reverso: imagenes.artemisaReverso,
+            documento: documentos.artemisa,
             cualidades: [
                 'Solidaridad',
                 'Pragmatismo',
@@ -55,6 +58,7 @@ export const cartasData = () => {
             nombre: 'Atenea',
             imagen: imagenes.atenea,
             reverso: imagenes.ateneaReverso,
+            documento: documentos.atenea,
             cualidades: [
                 'Inteligencia',
                 'Sabiduría',
@@ -79,6 +83,7 @@ export const cartasData = () => {
             nombre: 'Demeter',
             imagen: imagenes.demeter,
             reverso: imagenes.demeterReverso,
+            documento: documentos.demeter,
             cualidades: [
                 'Amor, afecto y cariño',
                 'Valoración',
@@ -102,6 +107,7 @@ export const cartasData = () => {
             nombre: 'Hera',
             imagen: imagenes.hera,
             reverso: imagenes.heraReverso,
+            documento: documentos.hera,
             cualidades: [
                 'Compromiso',
                 'Fidelidad',
@@ -125,31 +131,33 @@ export const cartasData = () => {
             nombre: 'Hestia',
             imagen: imagenes.hestia,
             reverso: imagenes.hestiaReverso,
+            documento: documentos.hestia,
             cualidades: [
                 'Sabiduria interna',
                 'Introspección',
                 'Fuego interior',
                 'Mistisismo',
                 'Serenidad',
-                'Sencillez'
+                
             ],
             estadoVirtuoso: [
                 'Capacidad de orden',
                 'Capacidad de percepción',
                 'Capacidad de recogimiento',
-                'Sociabilidad'
+               
             ],
             estadoDesvirtuoso: [
                 'Obsesión por el orden y la limpieza',
                 'Caos y confusión',
                 'racismo y fanatismo',
-                'Superficialidad y frivolidad'
+                
             ]
         },
         {
             nombre: 'Perséfone',
             imagen: imagenes.persefone,
             reverso: imagenes.persefoneReverso,
+            documento: documentos.persefone,
             cualidades: [
                 'Jovialidad',
                 'Intuición',

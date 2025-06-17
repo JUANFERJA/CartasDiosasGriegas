@@ -5,7 +5,7 @@ import '../Styles/Components/carta.scss';
 
 export const Carta = ({carta, setActiveCarta, setHexRect}) => {
 
-    const {/* nombre, imagen, reverso, */ cualidades, estadoVirtuoso, estadoDesvirtuoso} = carta;
+    const {cualidades, estadoVirtuoso, estadoDesvirtuoso, documento} = carta;
 
     const hexRef = useRef();
 
@@ -17,9 +17,18 @@ export const Carta = ({carta, setActiveCarta, setHexRect}) => {
   }, [setHexRect]);
 
   return (
-    <div className='carta-container d-flex flex-column'>
-        <div className="hex-container animate__animated animate__flipInY " ref={hexRef} onDoubleClick={() =>setActiveCarta(false) }>
-                <div className="cualidades d-flex">
+   
+       
+       <div className='carta-container d-flex flex-column'>
+        <div className="hex-container animate__animated animate__flipInY " 
+             ref={hexRef} 
+             onDoubleClick={() =>setActiveCarta(false)}
+             style={{backgroundImage: `url(${carta.imagen})`, 
+                     backgroundSize: 'cover', 
+                     backgroundPosition: 'center'
+                     }}>
+            <div className={`background-true`}>
+                <div className="cualidades d-flex">                    
                      <ul>
                         {
                             cualidades.map(cualidad =>(
@@ -35,7 +44,7 @@ export const Carta = ({carta, setActiveCarta, setHexRect}) => {
                         Su manera de gestionar en los aspectos físico, intelectual, espiritual y social, es:
                     </span>
                 </div>
-                <div className="cards d-flex">
+                <div className="cards d-flex flex-column">
                    <div className='container-cards d-flex flex-row'>
                         <div className="card-virtuoso d-flex flex-column">
                             <div className="titulo-habilidades">Estado virtuoso</div>
@@ -68,8 +77,17 @@ export const Carta = ({carta, setActiveCarta, setHexRect}) => {
                             </div>
                         </div>
                    </div>
-               </div>
+                   <button className='btn' style={{width: 'fit-content', margin: '0 auto', marginTop: '20px', background:'#560D31', color:'white'}}>
+                  
+                    <a href={documento}  download style={{height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color:'white'}}>
+                        <span className='icon'>Descargar</span>
+                    </a>
+                   </button>
+                </div>  
+                      
+            </div>       
+                      
         </div>           
-    </div>
+    </div> 
   )
 }

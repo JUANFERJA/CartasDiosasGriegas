@@ -8,6 +8,7 @@ export const CartasPage = () => {
     const [carta, setCarta] = useState();
     const [girandoIndex, setGirandoIndex] = useState(null);
     const [animData, setAnimData] = useState(null);
+    const [transparente, setTransparente] = useState(false);
     
 
     const handleSetCarta = (cartaSeleccionada, index) => {
@@ -29,10 +30,11 @@ export const CartasPage = () => {
             </div>
             {
                 activeCarta === true ? (
-                    <Carta carta={carta} setActiveCarta={setActiveCarta}/>
+                    <Carta carta={carta} setActiveCarta={setActiveCarta} transparente={transparente}/>
                 ) : (
                     <Cartas
                         setActiveCarta={setActiveCarta}
+                        setTransparente = {setTransparente}
                         setCarta={handleSetCarta}
                         girandoIndex={girandoIndex}
                         setAnimData={setAnimData}
