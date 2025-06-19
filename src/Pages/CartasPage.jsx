@@ -6,42 +6,37 @@ import { Carta } from '../Components/Carta.jsx';
 export const CartasPage = () => {
     const [activeCarta, setActiveCarta] = useState(false);
     const [carta, setCarta] = useState();
-    const [girandoIndex, setGirandoIndex] = useState(null);
-    const [animData, setAnimData] = useState(null);
-    const [transparente, setTransparente] = useState(false);
-    
-
-    const handleSetCarta = (cartaSeleccionada, index) => {
-        setGirandoIndex(index);
-        setTimeout(() => {
-            setGirandoIndex(null);
-            setCarta(cartaSeleccionada);
-            setActiveCarta(true);
-        }, 500); // Duración de la animación
-    };
+    let contenido = activeCarta ? `¡Descarga la ficha de tu Diosa ${carta?.nombre}, llénala y adjúntala a tu bítacora!.` : `Haz click en la imagen que más resuene
+                   contigo en este momento, esta será tu
+                    arquetipo para guiarte en el camino.` ;
 
     return (
         <div className='contenedor d-flex flex-row'>
-            <div className='texto'>
+            <div className='texto d-flex flex-column'>
                 <h1 className='titulo'>Identifica tu arquetipo...</h1>
-                <p className='contenido'>Haz click en la imagen que más resuene
-                   contigo en este momento, esta será tu
-                    arquetipo para guiarte en el camino.</p>
+                <p className='contenido'>{contenido}</p>
+                {
+                    activeCarta === true && (
+                        <>
+                            <button className='btn btn-descargar'>
+                                <a href={carta?.documento} download style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'white' }}>
+                                    <span className='icon'> DESCARGAR PDF</span>
+                                </a>
+                            </button>
+                            <button className='btn btn-regresar' onClick={() => setActiveCarta(false)}>
+                                REGRESAR
+                            </button>
+                        </>
+                    )
+                }
             </div>
             {
                 activeCarta === true ? (
-                    <Carta carta={carta} setActiveCarta={setActiveCarta} transparente={transparente}/>
+                    <Carta carta={carta}/>
                 ) : (
-                    <Cartas
-                        setActiveCarta={setActiveCarta}
-                        setTransparente = {setTransparente}
-                        setCarta={handleSetCarta}
-                        girandoIndex={girandoIndex}
-                        setAnimData={setAnimData}
-                        animData={animData}
-                    />
+                    <Cartas setCarta={setCarta} setActiveCarta={setActiveCarta} />
                 )
             }
-        </div>    
+        </div>
     )
 }

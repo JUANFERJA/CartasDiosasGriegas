@@ -15,7 +15,7 @@ import persefoneReverso from './Images/Carta_Perséfone_reverso.png';
 import Fondo from './Images/Fondo.jpg';
 
 let imagenes = {
-     afrodita,
+    afrodita,
     artemisa,   
     atenea,
     demeter,    

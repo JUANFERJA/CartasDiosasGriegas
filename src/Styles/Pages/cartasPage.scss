@@ -23,7 +23,6 @@
         color: white;
         height: auto;
         width: 40%;
-       /*  background: red; */
         margin-left: 60px;
         margin-top: 30px;
         .titulo{
@@ -38,8 +37,36 @@
             font-size: 30px;
             text-align: initial;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-            margin-top: 15%;
+            margin-top: 10%;
             width: 90%;
+        }
+        .btn-descargar{
+            border: 0;
+            border-radius: 0;
+            border-top-right-radius: 15px;
+            color: white;
+            font-family: 'Perpetua', serif;
+            font-size: 26px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            background: linear-gradient(to right, #90398B 10%, #E6850C);
+            box-shadow: 0 0 4px 4px rgba(0,0,0,0.3);
+        }
+        .btn-regresar{
+            border: 0;
+            border-radius: 0;
+            border-top-right-radius: 15px;
+            color: white;
+            font-family: 'Perpetua', serif;
+            font-size: 18px;
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            background: linear-gradient(to right, #90398B 10%, #E6850C);
+            box-shadow: 0 0 4px 4px rgba(0,0,0,0.3);
+
         }
     }
 
@@ -59,30 +86,36 @@
         margin-left: 10%;
         .fila{
             /* background: greenyellow; */
-            width: 36%;
+            height: 100vh;
+            width: 30%;
             margin-left: -7%;
            
             .items{
                  margin-top: auto;
                  margin-bottom: auto;
-                .carta{
-                    /* background: white; */
-                    width: 100%;                
-                }
-                .carta:hover{
-                    transform: scale(1.05);
+                 filter: drop-shadow(0 0 28px rgba(0, 0, 0, 0.99));
+
+                    .carta {
+                    width: 95%;
+                    height: 95%;
+                    margin-top: 4.5%;
+                    display: block;
+                    position: relative;
+                    z-index: 1;
+                    }
+                    .carta:hover{
+                    transform: scale(1.09);
                     transition: transform 0.3s ease;
                     cursor: pointer;
-                }
-            }            
+                    }
+                }                     
         }
       }
 
     }
-    .carta.girando {
+    /* .carta.girando {
      animation: girar-carta 0.7s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
-     z-index: 10;
-    /* Variables para la animación */
+     z-index: 10;   
     --tx: 0px;
     --ty: 0px;
     }
@@ -97,7 +130,7 @@
                 100% {
                     transform: translate(var(--tx), var(--ty)) scale(2) rotateY(180deg);
                 }
-    }
+    } */
 }
 
 
