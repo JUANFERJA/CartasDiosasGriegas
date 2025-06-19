@@ -9,12 +9,8 @@ export const Carta = ({carta}) => {
    
        
        <div className='carta-container d-flex flex-column animate__animated animate__zoomIn'>
-        <div className="hex-container " 
-             style={{backgroundImage: `url(${carta.reverso})`, 
-                     backgroundSize: 'cover', 
-                     backgroundPosition: 'center'
-                     }}>                
-        </div>           
+        <img className="hex-container " src={carta.reverso}/>               
+             
     </div> 
   )
 }
